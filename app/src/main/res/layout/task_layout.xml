@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="7dp"
+    app:strokeWidth="0dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/grey">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="20dp"
+                android:layout_height="80dp"
+                android:background="@color/light_green"
+                android:id="@+id/priority_color"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mobile App Research"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/priority_color"
+                android:id="@+id/task_name"
+                android:layout_marginStart="10dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/task_name"
+                android:layout_toEndOf="@+id/priority_color"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/outline_calendar_month"
+                android:id="@+id/calendar_img"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/calendar_img"
+                android:text="4 Oct"
+                android:layout_below="@+id/task_name"
+                android:textColor="@color/white"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/date"/>
+
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:checked="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/radio_button"
+                style="@style/Widget.Material3.CompoundButton.RadioButton"
+                app:buttonTint="@color/purple"
+                android:layout_marginEnd="20dp"/>
+
+
+        </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
