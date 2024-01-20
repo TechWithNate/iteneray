@@ -1,4 +1,4 @@
-![image](https://github.com/TechWithNate/iteneray/assets/81887567/9752b71c-6f2c-4f2a-a2e1-e89292824754)![image](https://github.com/TechWithNate/iteneray/assets/81887567/c5eba9ff-f1e4-47c1-a35b-b39c3bb611fa)
+![image](https://github.com/TechWithNate/iteneray/assets/81887567/9752b71c-6f2c-4f2a-a2e1-e89292824754)!
 
 
 # DESIGN AND IMPLEMENTATION OF COMPUTERIZED ITENARARY (TO-DO-LIST) SYSTEM FOR DEANS,HEAD OF DEPARTMENT AND KEY OFFICERS (CASE OF ACCRA TECHNICAL UNIVERSITY, ACCRA GHANA)
