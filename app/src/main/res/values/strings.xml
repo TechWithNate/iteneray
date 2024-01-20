@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Iteneray System</string>
+    <string name="daily_task_message">You have got 5 tasks today to complete</string>
 </resources>
