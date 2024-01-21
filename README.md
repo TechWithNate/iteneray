@@ -6,7 +6,9 @@
 # App Flow
 
 ## Splash Screen
-## Create Account with OTP authentication
+## Create Account with OTP 
+authentication 
+Google sign in
 ## Login to Main Page
 ## Main Page
   Display above Calender of days
