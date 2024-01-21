@@ -8,7 +8,8 @@
 ## Splash Screen
 ## Create Account with OTP 
 authentication 
-Google sign in
+Google sign iaoo ysea otp Google sign yp and aple sign up 
+
 ## Login to Main Page
 ## Main Page
   Display above Calender of days
