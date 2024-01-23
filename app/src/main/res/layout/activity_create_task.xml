@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark"
     tools:context=".CreateTask">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -230,19 +234,116 @@
         android:id="@+id/priority_txt"/>
 
 
-    <LinearLayout
-        android:layout_width="0dp"
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/priority_chip"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/priority_txt"
-        android:layout_marginTop="5dp"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:weightSum="3"
-        android:orientation="horizontal">
+        android:layout_marginEnd="20dp">
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="High"
+            android:gravity="center"
+            app:chipCornerRadius="5dp"
+            android:id="@+id/priority_high"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            app:chipStrokeColor="@color/white"
+            app:chipBackgroundColor="@color/dark"
+            android:textColor="@color/white"
+            app:chipStrokeWidth="1dp"/>
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium"
+            app:chipCornerRadius="5dp"
+            android:id="@+id/priority_medium"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            app:chipStrokeColor="@color/white"
+            app:chipBackgroundColor="@color/dark"
+            android:textColor="@color/white"
+            app:chipStrokeWidth="1dp"
+            app:textEndPadding="10dp"/>
 
 
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low"
+            app:chipCornerRadius="5dp"
+            android:id="@+id/priority_low"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            app:chipStrokeColor="@color/white"
+            app:chipBackgroundColor="@color/dark"
+            android:textColor="@color/white"
+            app:chipStrokeWidth="1dp"
+            app:textEndPadding="10dp"/>
 
-    </LinearLayout>
 
+    </com.google.android.material.chip.ChipGroup>
+<!--    <LinearLayout-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_below="@+id/priority_txt"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:weightSum="3"-->
+<!--        android:orientation="horizontal">-->
+
+
+<!--        -->
+<!--            -->
+
+<!--    </LinearLayout>-->
+
+
+<RelativeLayout
+    android:id="@+id/alert_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_below="@+id/priority_chip"
+    android:layout_marginTop="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get alert for this task"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_centerVertical="true"
+        android:id="@+id/alert_txt"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        app:thumbTint="@color/white"
+        android:layout_centerVertical="true"
+        app:trackTint="@color/purple"
+        android:id="@+id/get_alert" />
 
 </RelativeLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Task"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/purple"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/create_task"
+            android:layout_below="@+id/alert_layout"/>
+
+</RelativeLayout>
+
+</ScrollView>
