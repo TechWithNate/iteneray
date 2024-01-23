@@ -69,6 +69,17 @@ public class Home extends AppCompatActivity {
 
 
 
+        seeAll1.setOnClickListener(v -> {
+            Intent intent = new Intent(Home.this, AllTasks.class);
+            intent.putExtra("taskType", "today");
+            startActivity(intent);
+        });
+
+        seeAll1.setOnClickListener(v -> {
+            Intent intent = new Intent(Home.this, AllTasks.class);
+            intent.putExtra("taskType", "tomorrow");
+            startActivity(intent);
+        });
 
 
         addFab.setOnClickListener(v -> {
