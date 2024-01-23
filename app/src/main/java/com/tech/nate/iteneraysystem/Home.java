@@ -75,7 +75,7 @@ public class Home extends AppCompatActivity {
             startActivity(intent);
         });
 
-        seeAll1.setOnClickListener(v -> {
+        seeAll2.setOnClickListener(v -> {
             Intent intent = new Intent(Home.this, AllTasks.class);
             intent.putExtra("taskType", "tomorrow");
             startActivity(intent);
