@@ -55,6 +55,15 @@ public class Home extends AppCompatActivity {
         todayRecycler.setLayoutManager(layoutManager);
         todayRecycler.setAdapter(taskAdapter);
 
+        tomorrowRecycler.setHasFixedSize(true);
+        todayTask = new ArrayList<>();
+        todayTask.add(new Model("Assemble", "Develop a flutter application", startTime, endTime, Model.Priority.LOW, Model.TaskState.INCOMPLETE));
+        todayTask.add(new Model("Job", "Going to the gymn", startTime, endTime, Model.Priority.MEDIUM, Model.TaskState.INCOMPLETE));
+        todayTask.add(new Model("Shop", "Setting up new windows", startTime, endTime, Model.Priority.LOW, Model.TaskState.COMPLETED));
+        todayTask.add(new Model("Job", "Local Testing", startTime, endTime, Model.Priority.HIGH, Model.TaskState.INCOMPLETE));
+
+
+
 
 
         addFab.setOnClickListener(v -> {
