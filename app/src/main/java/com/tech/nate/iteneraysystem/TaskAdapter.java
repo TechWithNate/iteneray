@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.radiobutton.MaterialRadioButton;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
@@ -39,7 +40,11 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
         Model taskModel = tasks.get(position);
         holder.taskName.setText(taskModel.getTaskName());
-        //holder.date.setText(taskModel.getStartTime());
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MM");
+        String formattedDateTime = taskModel.getStartTime().toLocalDate().format(formatter);
+        holder.date.setText(formattedDateTime);
+
 
         if (taskModel.getPriority().equals(Model.Priority.HIGH)){
             holder.priority.setBackgroundColor(Color.parseColor("#FACBBA"));
