@@ -50,10 +50,12 @@ public class AllTasks extends AppCompatActivity {
         todayTask.add(new Model("Windows", "Setting up new windows", startTime, endTime, Model.Priority.LOW, Model.TaskState.COMPLETED));
         todayTask.add(new Model("Job", "Local Testing", startTime, endTime, Model.Priority.HIGH, Model.TaskState.INCOMPLETE));
 
-        taskAdapter = new TaskAdapter(this, todayTask, 3);
+        taskAdapter = new TaskAdapter(this, todayTask, todayTask.size());
         taskRecycler.setLayoutManager(new LinearLayoutManager(this));
         taskRecycler.setAdapter(taskAdapter);
 
+
+        backBtn.setOnClickListener(v -> this.finish());
 
 
     }
