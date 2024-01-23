@@ -41,7 +41,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         Model taskModel = tasks.get(position);
         holder.taskName.setText(taskModel.getTaskName());
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MM");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMM");
         String formattedDateTime = taskModel.getStartTime().toLocalDate().format(formatter);
         holder.date.setText(formattedDateTime);
 
@@ -54,11 +54,11 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
             holder.priority.setBackgroundColor(Color.parseColor("#D7F0FF"));
         }
 
-//        if (taskModel.getTaskState().equals(Model.TaskState.COMPLETED)){
-//
-//        }else {
-//            holder.status.isChecked();
-//        }
+        if (taskModel.getTaskState().equals(Model.TaskState.COMPLETED)){
+            holder.status.setChecked(true);
+        }else {
+            holder.status.setChecked(false);
+        }
 
     }
 
