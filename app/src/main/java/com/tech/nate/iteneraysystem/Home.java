@@ -63,7 +63,7 @@ public class Home extends AppCompatActivity {
         tomorrowTask.add(new Model("Job", "Going to the gymn", startTime, endTime, Model.Priority.MEDIUM, Model.TaskState.INCOMPLETE));
         tomorrowTask.add(new Model("Shop", "Setting up new windows", startTime, endTime, Model.Priority.LOW, Model.TaskState.COMPLETED));
         tomorrowTask.add(new Model("Job", "Local Testing", startTime, endTime, Model.Priority.HIGH, Model.TaskState.INCOMPLETE));
-        tomorrowAdapter = new TaskAdapter(this, tomorrowTask, 3)
+        tomorrowAdapter = new TaskAdapter(this, tomorrowTask, 3);
         tomorrowRecycler.setLayoutManager(layoutManager);
         tomorrowRecycler.setAdapter(tomorrowAdapter);
 
