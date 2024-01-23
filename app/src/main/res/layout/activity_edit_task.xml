@@ -358,7 +358,7 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Create Task"
+                android:text="Delete Task"
                 android:layout_marginStart="10dp"
                 app:cornerRadius="5dp"
                 android:layout_weight="1"
