@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,255 +7,264 @@
     android:background="@color/dark"
     tools:context=".Home">
 
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-    <TextView
-        android:id="@+id/daily_task"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/daily_task_message"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/search"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_below="@+id/daily_task"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        app:cardBackgroundColor="@color/grey"
-        app:strokeWidth="0dp">
-
-        <RelativeLayout
-            android:id="@+id/search_card"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/baseline_search"
-                android:layout_marginStart="8dp"
-                android:id="@+id/search_btn"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/search_btn"
-                android:layout_centerVertical="true"
-                android:text="Search Task Here"
-                android:textColor="@color/white"
-                android:layout_marginStart="10dp"
-                android:id="@+id/search_txt"/>
-
-        </RelativeLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-<!--    Progress Title Section-->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="26dp"
-        android:layout_below="@+id/search"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
-        android:id="@+id/progress">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Progress"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:id="@+id/progress_txt"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:textColor="@color/purple"
-            android:text="See All"
-            android:id="@+id/see_all"/>
-
-    </RelativeLayout>
-
-<!--    Progress Details Section-->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/progress_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/progress"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="10dp"
-        app:strokeWidth="0dp"
-        app:cardBackgroundColor="@color/grey">
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
+
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/daily_task"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="Daily Task"
-                android:textColor="@color/white"
-                android:textSize="18sp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:id="@+id/daily_task_txt"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2/3 Task Completed"
+                android:layout_marginTop="20dp"
+                android:text="@string/daily_task_message"
+                android:textSize="20sp"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp"
-                android:layout_below="@+id/daily_task_txt"
-                android:id="@+id/daily_task_completed"/>
+                />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="You are almost done for the day"
-                android:textColor="@color/purple"
-                android:textSize="12sp"
-                android:layout_below="@+id/daily_task_completed"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp"
-                android:id="@+id/daily_progress_txt"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="56%"
-                android:textColor="@color/white"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@+id/daily_task_completed"
-                android:layout_marginEnd="10dp"
-                android:id="@+id/progress_percentage"/>
-
-
-            <ProgressBar
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/search"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/progress_percentage"
-                android:layout_marginTop="5dp"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progress="56"
+                android:layout_height="45dp"
+                android:layout_below="@+id/daily_task"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/grey"
+                app:strokeWidth="0dp">
+
+                <RelativeLayout
+                    android:id="@+id/search_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/baseline_search"
+                        android:layout_marginStart="8dp"
+                        android:id="@+id/search_btn"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/search_btn"
+                        android:layout_centerVertical="true"
+                        android:text="Search Task Here"
+                        android:textColor="@color/white"
+                        android:layout_marginStart="10dp"
+                        android:id="@+id/search_txt"/>
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--    Progress Title Section-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:layout_below="@+id/search"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:progressBackgroundTint="@color/purple"
-                android:progressTint="@color/purple"
-                android:layout_marginBottom="25dp"
-                android:id="@+id/progress_bar"/>
+                android:layout_marginTop="20dp"
+                android:id="@+id/progress">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Progress"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:id="@+id/progress_txt"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:textColor="@color/purple"
+                    android:text="See All"
+                    android:id="@+id/see_all"/>
+
+            </RelativeLayout>
+
+            <!--    Progress Details Section-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/progress_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/progress"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/grey">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Daily Task"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/daily_task_txt"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2/3 Task Completed"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_below="@+id/daily_task_txt"
+                        android:id="@+id/daily_task_completed"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="You are almost done for the day"
+                        android:textColor="@color/purple"
+                        android:textSize="12sp"
+                        android:layout_below="@+id/daily_task_completed"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="4dp"
+                        android:id="@+id/daily_progress_txt"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="56%"
+                        android:textColor="@color/white"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/daily_task_completed"
+                        android:layout_marginEnd="10dp"
+                        android:id="@+id/progress_percentage"/>
+
+
+                    <ProgressBar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/progress_percentage"
+                        android:layout_marginTop="5dp"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:progress="56"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:progressBackgroundTint="@color/purple"
+                        android:progressTint="@color/purple"
+                        android:layout_marginBottom="25dp"
+                        android:id="@+id/progress_bar"/>
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--    Today's Task Title Section-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:layout_below="@+id/progress_details"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/today_task">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Today's Task"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:id="@+id/today_txt"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:textColor="@color/purple"
+                    android:text="See All"
+                    android:id="@+id/see_all1"/>
+
+            </RelativeLayout>
+
+            <!--    Today's Recycler View-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/today_task"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:id="@+id/today_recycler"/>
+
+            <!--    Tomorrow's Task Title Section-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:layout_below="@+id/today_recycler"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/tomorrow_task">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tomorrow's Task"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:id="@+id/tomorrow_txt"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:textColor="@color/purple"
+                    android:text="See All"
+                    android:id="@+id/see_all2"/>
+
+            </RelativeLayout>
+
+            <!--    Tomorrow's Recycler View-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/tomorrow_task"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:id="@+id/tomorrow_recycler"/>
 
 
         </RelativeLayout>
 
-    </com.google.android.material.card.MaterialCardView>
-
-    <!--    Today's Task Title Section-->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="26dp"
-        android:layout_below="@+id/progress_details"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
-        android:id="@+id/today_task">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Today's Task"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:id="@+id/today_txt"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:textColor="@color/purple"
-            android:text="See All"
-            android:id="@+id/see_all1"/>
-
-    </RelativeLayout>
-
-<!--    Today's Recycler View-->
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/today_task"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:id="@+id/today_recycler"/>
-
-    <!--    Tomorrow's Task Title Section-->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="26dp"
-        android:layout_below="@+id/today_recycler"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
-        android:id="@+id/tomorrow_task">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tomorrow's Task"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:id="@+id/tomorrow_txt"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:textColor="@color/purple"
-            android:text="See All"
-            android:id="@+id/see_all2"/>
-
-    </RelativeLayout>
-
-<!--    Tomorrow's Recycler View-->
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/tomorrow_task"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:id="@+id/tomorrow_recycler"/>
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
         app:backgroundTint="@color/purple"
+        app:rippleColor="@color/white"
+        style="@style/Widget.MaterialComponents.FloatingActionButton"
         android:src="@drawable/baseline_add"
         android:id="@+id/add_fab"/>
-    </RelativeLayout>
 
-</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
