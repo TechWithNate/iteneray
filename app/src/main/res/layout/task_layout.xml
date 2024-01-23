@@ -26,6 +26,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_toEndOf="@+id/priority_color"
                 android:id="@+id/task_name"
+                android:layout_marginBottom="5dp"
                 android:layout_marginStart="10dp"/>
 
             <ImageView
