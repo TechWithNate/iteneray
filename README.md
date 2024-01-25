@@ -10,7 +10,8 @@ Splash screen dusplays in 2.5 seconds with ATU logo
 ## Create Account with OTP
 OTP authentication with firebase
 
-## Login to Main Page
+## Login to Main Page 
+OTP log in
 ## Main Page
   Display above Calender of days
   Display 
