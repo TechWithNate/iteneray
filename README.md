@@ -9,7 +9,7 @@ https://www.behance.net/gallery/173712265/Astro-Talk-AI-Astrology-App
 Splash screen dusplays in 2.5 seconds with ATU logo
 ## Create Account with OTP 
 authentication 
-Google sign iaoo ysea otp Google sign yp and aple sign up 
+OTP authentication with firebase
 
 ## Login to Main Page
 ## Main Page
