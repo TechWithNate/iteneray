@@ -7,8 +7,7 @@ https://www.behance.net/gallery/173712265/Astro-Talk-AI-Astrology-App
 
 ## Splash Screen 
 Splash screen dusplays in 2.5 seconds with ATU logo
-## Create Account with OTP 
-authentication 
+## Create Account with OTP
 OTP authentication with firebase
 
 ## Login to Main Page
