@@ -38,7 +38,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         app:cornerRadius="5dp"
-        android:text="Send Code"
+        android:text="@string/send_code"
         app:backgroundTint="@color/purple"
         android:id="@+id/send_btn"/>
 
