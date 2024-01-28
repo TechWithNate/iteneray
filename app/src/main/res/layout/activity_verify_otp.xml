@@ -42,18 +42,6 @@
         app:backgroundTint="@color/purple"
         android:id="@+id/send_btn"/>
 
-    <com.hbb20.CountryCodePicker
-        android:id="@+id/ccp"
-        android:layout_marginTop="10dp"
-        android:layout_width="70dp"
-        android:layout_height="48dp"
-        app:ccp_autoDetectCountry="true"
-        android:layout_below="@+id/verify_txt"
-        app:ccp_showFlag="true"
-        app:ccp_showNameCode="true"
-        app:ccp_showFullName="true"
-        app:ccpDialog_backgroundColor="@color/purple"
-        android:layout_marginStart="20dp"/>
 
 
 </RelativeLayout>
