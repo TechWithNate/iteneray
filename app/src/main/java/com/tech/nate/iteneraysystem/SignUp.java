@@ -124,6 +124,7 @@ public class SignUp extends AppCompatActivity {
                 progressDialog.dismiss();
                 code_sent = s;
                 Intent intent = new Intent(SignUp.this, VerifyOTP.class);
+                Toast.makeText(SignUp.this, "Code is "+ code_sent, Toast.LENGTH_SHORT).show();
                 intent.putExtra("otp", code_sent);
                 intent.putExtra("phone", tel);
                 startActivity(intent);
