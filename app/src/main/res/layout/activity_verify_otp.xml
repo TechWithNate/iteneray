@@ -24,10 +24,9 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_toEndOf="@+id/ccp"
         android:id="@+id/phone_number"
         android:textColor="@color/white"
-        android:hint="54 665 1113"
+        android:hint="Enter OTP code"
         android:textColorHint="#959494"/>
 
     <com.google.android.material.button.MaterialButton
