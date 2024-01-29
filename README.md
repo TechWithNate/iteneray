@@ -17,6 +17,6 @@ OTP log in
   Display 
 
 ##  View atiniry 
-  Add atinrary 
+##  Add atinrary 
 ##  Edit atenirary 
 ##  Delete artinerary
