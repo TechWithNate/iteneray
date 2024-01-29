@@ -16,7 +16,7 @@ OTP log in
   Display above Calender of days
   Display 
 
-  View atiniry 
+#  View atiniry 
   Add atinrary 
   Edit atenirary 
   Delete artinerary
