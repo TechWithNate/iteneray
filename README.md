@@ -19,4 +19,4 @@ OTP log in
 ##  View atiniry 
   Add atinrary 
 ##  Edit atenirary 
-  Delete artinerary
+##  Delete artinerary
