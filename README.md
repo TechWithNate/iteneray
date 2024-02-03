@@ -21,3 +21,5 @@ OTP log in
 ##  Add atinrary 
 ##  Edit atenirary 
 ##  Delete artinerary
+
+https://youtu.be/aPaFalC2a28?si=q_4Sl_7Uj0L0MHAP
