@@ -23,3 +23,5 @@ OTP log in
 ##  Delete artinerary
 
 https://youtu.be/aPaFalC2a28?si=q_4Sl_7Uj0L0MHAP
+https://youtu.be/v4nEjn6TOZ4?si=YlDVytpmvtXCNuVq
+https://youtu.be/_up1K4p1-aY?si=AF4oxxcFv4fzIFf6
