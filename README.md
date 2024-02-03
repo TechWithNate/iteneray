@@ -2,6 +2,7 @@
 
 ![image](https://github.com/TechWithNate/iteneray/assets/81887567/9752b71c-6f2c-4f2a-a2e1-e89292824754)!
 https://www.behance.net/gallery/173712265/Astro-Talk-AI-Astrology-App
+https://youtu.be/CD1Y2DmL5JM?si=zMKzhO6TNprrrybQ
 
 # App Flow
 
