@@ -12,10 +12,11 @@
         android:layout_height="500dp"
         android:layout_centerInParent="true"
         android:id="@+id/logo"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
         android:src="@drawable/atu_logo"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:contentDescription="School Logo" />
 
     <TextView
         android:layout_width="wrap_content"

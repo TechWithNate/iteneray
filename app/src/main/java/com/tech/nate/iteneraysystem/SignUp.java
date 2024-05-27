@@ -17,6 +17,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.FirebaseApp;
@@ -72,15 +73,13 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-
                 String number;
 
                 number = phoneNumber.getText().toString();
                 if (number.isEmpty()) {
                     Toast.makeText(SignUp.this, "Please Enter number", Toast.LENGTH_SHORT).show();
                 }else if (number.length() < 10){
-                    Toast.makeText(SignUp.this, "Please enter correct number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUp.this, "Please enter correct phone number", Toast.LENGTH_SHORT).show();
                 }else{
                     progressDialog.setTitle("Verification");
                     progressDialog.setMessage("Sending OTP...");
@@ -124,15 +123,33 @@ public class SignUp extends AppCompatActivity {
                 progressDialog.dismiss();
                 code_sent = s;
                 Intent intent = new Intent(SignUp.this, VerifyOTP.class);
-                Toast.makeText(SignUp.this, "Code is "+ code_sent, Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUp.this, "Code is "+ s, Toast.LENGTH_SHORT).show();
                 intent.putExtra("otp", code_sent);
                 intent.putExtra("phone", tel);
                 startActivity(intent);
             }
         };
 
-    }
+        String email = "dzrekenathan2002@gmail.com";
+        String password = "123nate";
 
+        firebaseAuth.createUserWithEmailAndPassword(email, password)
+                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    @Override
+                    public void onSuccess(AuthResult authResult) {
+                        Toast.makeText(SignUp.this, "Auth Successful", Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "onSuccess: "+ authResult.getCredential());
+                        startActivity(new Intent(SignUp.this, Home.class));
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(SignUp.this, "Auth Failed", Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "onFailure: "+e.getMessage());
+                    }
+                });
+
+    }
 
 
 
@@ -143,20 +160,6 @@ public class SignUp extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
     }
 
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        FirebaseApp.initializeApp(/*context=*/ this);
-//        FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
-//        firebaseAppCheck.installAppCheckProviderFactory(
-//                PlayIntegrityAppCheckProviderFactory.getInstance());
-//        super.onStart();
-//        if (FirebaseAuth.getInstance().getCurrentUser() != null){
-//            Intent intent = new Intent(SignUp.this, MainActivity.class);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//            startActivity(intent);
-//        }
-//    }
 
 
 }
