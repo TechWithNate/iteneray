@@ -1,24 +1,38 @@
 package com.tech.nate.iteneraysystem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Objects;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity implements TaskAdapter.TaskClickedInterface {
 
     private MaterialCardView search;
     private TextView seeAll;
@@ -28,13 +42,12 @@ public class Home extends AppCompatActivity {
     private TextView progressPercentage;
     private ProgressBar progressBar;
     private RecyclerView todayRecycler;
-    private RecyclerView tomorrowRecycler;
     private FloatingActionButton addFab;
-    private ArrayList<Model> todayTask;
-    private ArrayList<Model> tomorrowTask;
+
+    private ArrayList<Model> tasks;
     private TaskAdapter taskAdapter;
-    private TaskAdapter tomorrowAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,42 +55,22 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         initViews();
 
-        //Sample Time
-        LocalDateTime startTime = LocalDateTime.of(LocalDate.now(), LocalTime.of(11, 0));
-        LocalDateTime endTime = LocalDateTime.of(LocalDate.now(), LocalTime.of(12, 45));
 
+        tasks = new ArrayList<>();
+        taskAdapter = new TaskAdapter(this, tasks, this);
         todayRecycler.setHasFixedSize(true);
-        todayTask = new ArrayList<>();
-        todayTask.add(new Model("Mobile Dev", "Develop a flutter application", startTime, endTime, Model.Priority.HIGH, Model.TaskState.INCOMPLETE));
-        todayTask.add(new Model("Gym", "Going to the gymn", startTime, endTime, Model.Priority.MEDIUM, Model.TaskState.INCOMPLETE));
-        todayTask.add(new Model("Windows", "Setting up new windows", startTime, endTime, Model.Priority.LOW, Model.TaskState.COMPLETED));
-        todayTask.add(new Model("Job", "Local Testing", startTime, endTime, Model.Priority.HIGH, Model.TaskState.INCOMPLETE));
-
-        taskAdapter = new TaskAdapter(this, todayTask, 3);
         todayRecycler.setLayoutManager(layoutManager);
         todayRecycler.setAdapter(taskAdapter);
 
-        tomorrowRecycler.setHasFixedSize(true);
-        tomorrowTask = new ArrayList<>();
-        tomorrowTask.add(new Model("Assemble", "Develop a flutter application", startTime, endTime, Model.Priority.LOW, Model.TaskState.INCOMPLETE));
-        tomorrowTask.add(new Model("Job", "Going to the gymn", startTime, endTime, Model.Priority.MEDIUM, Model.TaskState.INCOMPLETE));
-        tomorrowTask.add(new Model("Shop", "Setting up new windows", startTime, endTime, Model.Priority.LOW, Model.TaskState.COMPLETED));
-        tomorrowTask.add(new Model("Job", "Local Testing", startTime, endTime, Model.Priority.HIGH, Model.TaskState.INCOMPLETE));
-        tomorrowAdapter = new TaskAdapter(this, tomorrowTask, 3);
-        tomorrowRecycler.setLayoutManager(new LinearLayoutManager(this));
-        tomorrowRecycler.setAdapter(tomorrowAdapter);
+
+        fetchTasksFromFirebase();
+
 
 
 
         seeAll1.setOnClickListener(v -> {
             Intent intent = new Intent(Home.this, AllTasks.class);
             intent.putExtra("taskType", "today");
-            startActivity(intent);
-        });
-
-        seeAll2.setOnClickListener(v -> {
-            Intent intent = new Intent(Home.this, AllTasks.class);
-            intent.putExtra("taskType", "tomorrow");
             startActivity(intent);
         });
 
@@ -91,14 +84,85 @@ public class Home extends AppCompatActivity {
         search = findViewById(R.id.search);
         seeAll = findViewById(R.id.see_all);
         seeAll1 = findViewById(R.id.see_all1);
-        seeAll2 = findViewById(R.id.see_all2);
         dailyTaskCompleted = findViewById(R.id.daily_task_completed);
         progressBar = findViewById(R.id.progress_bar);
         progressPercentage = findViewById(R.id.progress_percentage);
         todayRecycler = findViewById(R.id.today_recycler);
-        tomorrowRecycler = findViewById(R.id.tomorrow_recycler);
         addFab = findViewById(R.id.add_fab);
         layoutManager = new LinearLayoutManager(this);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
     }
 
+
+    private void fetchTasksFromFirebase() {
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        DatabaseReference tasksRef = FirebaseDatabase.getInstance().getReference().child("Itinerary").child(Objects.requireNonNull(firebaseAuth.getUid()));
+
+        tasksRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                tasks.clear();
+                for (DataSnapshot taskSnapshot : dataSnapshot.getChildren()) {
+                    String taskName = taskSnapshot.child("taskName").getValue(String.class);
+                    String taskDescription = taskSnapshot.child("taskDescription").getValue(String.class);
+                    String startTime = taskSnapshot.child("startTime").getValue(String.class); // Adjust this according to your data structure
+                    String endTime = taskSnapshot.child("endTime").getValue(String.class); // Adjust this according to your data structure
+                    String day = taskSnapshot.child("day").getValue(String.class);
+                    String priority = taskSnapshot.child("priority").getValue(String.class);
+                    String taskState = taskSnapshot.child("taskState").getValue(String.class);
+                    String dateStr = taskSnapshot.child("date").getValue(String.class);
+
+                    // Parse other fields as needed from dataSnapshot
+
+                    // Create Model object and add to tasks list
+                    Model taskModel = new Model();
+                    taskModel.setTaskName(taskName);
+                    taskModel.setTaskDescription(taskDescription);
+                    taskModel.setStartTime(startTime);
+                    taskModel.setEndTime(endTime);
+                    taskModel.setDay(day);
+//                    taskModel.setPriority(Model.Priority.valueOf(priority));
+//                    taskModel.setTaskState(Model.TaskState.valueOf(taskState));
+
+
+                    if (dateStr != null) {
+                        SimpleDateFormat firebaseDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                        try {
+                            Date date = firebaseDateFormat.parse(dateStr);
+                            if (date != null) {
+                                SimpleDateFormat displayDateFormat = new SimpleDateFormat("d, MMM", Locale.getDefault());
+                                String displayDate = displayDateFormat.format(date);
+                                // Update the UI with the formatted date
+                                //etDate.setText(displayDate);
+                                taskModel.setDisplayDate(displayDate);
+                            }
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+
+                    // Set other fields in taskModel
+
+                    tasks.add(taskModel);
+                }
+                taskAdapter.notifyDataSetChanged(); // Notify adapter of data change
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle error
+            }
+        });
+    }
+
+
+
+
+
+    @Override
+    public void onTaskClicked(int position) {
+        tasks.get(position);
+        Toast.makeText(this, "Task: "+position, Toast.LENGTH_SHORT).show();
+    }
 }
