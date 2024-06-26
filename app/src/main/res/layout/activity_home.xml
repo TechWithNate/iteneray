@@ -186,7 +186,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Today's Task"
+                    android:text="@string/tasks"
                     android:textSize="20sp"
                     android:textColor="@color/white"
                     android:id="@+id/today_txt"/>
@@ -197,7 +197,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:textColor="@color/purple"
-                    android:text="See All"
+                    android:text="@string/see_all"
                     android:id="@+id/see_all1"/>
 
             </RelativeLayout>
@@ -212,44 +212,6 @@
                 android:layout_marginEnd="20dp"
                 android:id="@+id/today_recycler"/>
 
-            <!--    Tomorrow's Task Title Section-->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="26dp"
-                android:layout_below="@+id/today_recycler"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="20dp"
-                android:id="@+id/tomorrow_task">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tomorrow's Task"
-                    android:textSize="20sp"
-                    android:textColor="@color/white"
-                    android:id="@+id/tomorrow_txt"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:textColor="@color/purple"
-                    android:text="See All"
-                    android:id="@+id/see_all2"/>
-
-            </RelativeLayout>
-
-            <!--    Tomorrow's Recycler View-->
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_below="@+id/tomorrow_task"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:id="@+id/tomorrow_recycler"/>
 
 
         </RelativeLayout>
@@ -261,7 +223,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="@color/purple"
+        app:backgroundTint="#F7F8FF"
         app:rippleColor="@color/white"
         style="@style/Widget.MaterialComponents.FloatingActionButton"
         android:src="@drawable/baseline_add"
