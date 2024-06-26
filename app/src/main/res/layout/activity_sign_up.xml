@@ -27,7 +27,7 @@
         android:layout_toEndOf="@+id/ccp"
         android:id="@+id/phone_number"
         android:textColor="@color/white"
-        android:hint="54 665 1113"
+        android:hint="054 665 1113"
         android:textColorHint="#959494"/>
 
     <com.google.android.material.button.MaterialButton
