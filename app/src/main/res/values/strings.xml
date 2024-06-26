@@ -2,4 +2,6 @@
     <string name="app_name">Iteneray System</string>
     <string name="daily_task_message">You have got 5 tasks today to complete</string>
     <string name="send_code">Send Code</string>
+    <string name="tasks">Tasks</string>
+    <string name="see_all">See All</string>
 </resources>

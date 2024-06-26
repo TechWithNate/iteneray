@@ -114,6 +114,7 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onVerificationFailed(@NonNull FirebaseException e) {
                 progressDialog.dismiss();
+                Toast.makeText(SignUp.this, "Verification Sent", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -130,24 +131,6 @@ public class SignUp extends AppCompatActivity {
             }
         };
 
-        String email = "dzrekenathan2002@gmail.com";
-        String password = "123nate";
-
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
-                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
-                        Toast.makeText(SignUp.this, "Auth Successful", Toast.LENGTH_SHORT).show();
-                        Log.d(TAG, "onSuccess: "+ authResult.getCredential());
-                        startActivity(new Intent(SignUp.this, Home.class));
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(SignUp.this, "Auth Failed", Toast.LENGTH_SHORT).show();
-                        Log.d(TAG, "onFailure: "+e.getMessage());
-                    }
-                });
 
     }
 

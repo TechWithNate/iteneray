@@ -3,6 +3,9 @@
     <style name="Base.Theme.IteneraySystem" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/grey</item>
+<!--        <item name="colorPrimaryDark">@color/dark_primary_color</item>-->
+<!--        <item name="colorAccent">@color/accent_color</item>-->
     </style>
 
     <style name="Theme.IteneraySystem" parent="Base.Theme.IteneraySystem" />

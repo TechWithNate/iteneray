@@ -25,3 +25,13 @@ OTP log in
 https://youtu.be/aPaFalC2a28?si=q_4Sl_7Uj0L0MHAP
 https://youtu.be/v4nEjn6TOZ4?si=YlDVytpmvtXCNuVq
 https://youtu.be/_up1K4p1-aY?si=AF4oxxcFv4fzIFf6
+
+
+## Create Task Format
+1. Task ID
+   2. Task Name [String]
+   3. Task Description [String]
+   4. Task Start Time [TimeDate]
+   5. Task End Time [TimeDate]
+   6. Task Priority [String]
+   7. Get alert [Boolean]
