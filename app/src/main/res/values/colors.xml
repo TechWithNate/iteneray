@@ -6,4 +6,6 @@
     <color name="grey">#1E1E1E</color>
     <color name="purple">#BA83DE</color>
     <color name="light_green">#D7F0FF</color>
+    <color name="light_blue">#708AF4</color>
+    <color name="accent">#1A1C2B</color>
 </resources>
