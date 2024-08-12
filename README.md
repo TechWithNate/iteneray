@@ -1,6 +1,6 @@
 # DESIGN AND IMPLEMENTATION OF COMPUTERIZED ITENARARY (TO-DO-LIST) SYSTEM FOR DEANS,HEAD OF DEPARTMENT AND KEY OFFICERS (CASE OF ACCRA TECHNICAL UNIVERSITY, ACCRA GHANA)
 
-![image](https://github.com/TechWithNate/iteneray/assets/81887567/9752b71c-6f2c-4f2a-a2e1-e89292824754)!
+![image](https://github.com/TechWithNate/iteneray/assets/81887567/9752b71c-6f2c-4f2a-a2e1-e89292824754)
 
 
 # How to set up project.
@@ -12,11 +12,13 @@ Open android studio for the firs time and make sure you are connected to the int
 
 Create a folder and clone the project using opening cmd into that folder and paste the command
 ```bash
-git clone
+git clone https://github.com/TechWithNate/iteneray.git
 ```
 NB: make sure git is intalled on your machine.
 Once you clone the project, open android studio and click open from folder and select where project is cloned.
+
 Allow all dependencies and ready to run.
+
 Run project
 
 ## Splash Screen 
