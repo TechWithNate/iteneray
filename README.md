@@ -1,10 +1,23 @@
 # DESIGN AND IMPLEMENTATION OF COMPUTERIZED ITENARARY (TO-DO-LIST) SYSTEM FOR DEANS,HEAD OF DEPARTMENT AND KEY OFFICERS (CASE OF ACCRA TECHNICAL UNIVERSITY, ACCRA GHANA)
 
 ![image](https://github.com/TechWithNate/iteneray/assets/81887567/9752b71c-6f2c-4f2a-a2e1-e89292824754)!
-https://www.behance.net/gallery/173712265/Astro-Talk-AI-Astrology-App
-https://youtu.be/CD1Y2DmL5JM?si=zMKzhO6TNprrrybQ
 
-# App Flow
+
+# How to set up project.
+Download and install Java JDK here [windows](https://www.oracle.com/java/technologies/downloads/#jdk22-windows) [Mac](https://www.oracle.com/java/technologies/downloads/#jdk22-mac)
+
+Download and install the latest android studio [here](https://developer.android.com/studio?gad_source=1&gclid=Cj0KCQjw5ea1BhC6ARIsAEOG5pyIog0z17drYnkqJblVh52XatU2GmN4pvgd5MQFMVW2F8eC2tpcpxYaAgnPEALw_wcB&gclsrc=aw.ds)
+
+Open android studio for the firs time and make sure you are connected to the internet to downlaod the neccessary libraries.
+
+Create a folder and clone the project using opening cmd into that folder and paste the command
+```bash
+git clone
+```
+NB: make sure git is intalled on your machine.
+Once you clone the project, open android studio and click open from folder and select where project is cloned.
+Allow all dependencies and ready to run.
+Run project
 
 ## Splash Screen 
 Splash screen dusplays in 2.5 seconds with ATU logo
