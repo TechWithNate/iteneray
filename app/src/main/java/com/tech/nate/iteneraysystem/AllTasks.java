@@ -112,7 +112,6 @@ public class AllTasks extends AppCompatActivity implements TaskAdapter.TaskClick
                         }
                     }
 
-
                     // Set other fields in taskModel
 
                     tasks.add(taskModel);
