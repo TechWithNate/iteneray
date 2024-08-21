@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +49,7 @@ public class Home extends AppCompatActivity implements TaskAdapter.TaskClickedIn
     private TaskAdapter taskAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private DatabaseReference databaseReference;
+    private SearchView searchBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,15 +80,30 @@ public class Home extends AppCompatActivity implements TaskAdapter.TaskClickedIn
         addFab.setOnClickListener(v -> {
             startActivity(new Intent(Home.this, CreateTask.class));
         });
+
+        searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                taskAdapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                taskAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
     }
 
     private void initViews(){
-        search = findViewById(R.id.search);
-        seeAll = findViewById(R.id.see_all);
+        searchBar = findViewById(R.id.search_btn);
+        //seeAll = findViewById(R.id.see_all);
         seeAll1 = findViewById(R.id.see_all1);
-        dailyTaskCompleted = findViewById(R.id.daily_task_completed);
-        progressBar = findViewById(R.id.progress_bar);
-        progressPercentage = findViewById(R.id.progress_percentage);
+        //dailyTaskCompleted = findViewById(R.id.daily_task_completed);
+        ///progressBar = findViewById(R.id.progress_bar);
+        //progressPercentage = findViewById(R.id.progress_percentage);
         todayRecycler = findViewById(R.id.today_recycler);
         addFab = findViewById(R.id.add_fab);
         layoutManager = new LinearLayoutManager(this);

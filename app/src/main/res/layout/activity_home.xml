@@ -28,156 +28,146 @@
                 android:textColor="@color/white"
                 />
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/search"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_below="@+id/daily_task"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="20dp"
-                app:cardBackgroundColor="@color/grey"
-                app:strokeWidth="0dp">
+
 
                 <RelativeLayout
                     android:id="@+id/search_card"
+                    android:layout_below="@+id/daily_task"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@color/grey"
+                    android:layout_marginEnd="20dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
+                    <SearchView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:queryHint="Search items"
+                        android:foregroundTint="@color/white"
                         android:layout_centerVertical="true"
                         android:src="@drawable/baseline_search"
                         android:layout_marginStart="8dp"
                         android:id="@+id/search_btn"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toEndOf="@+id/search_btn"
-                        android:layout_centerVertical="true"
-                        android:text="Search Task Here"
-                        android:textColor="@color/white"
-                        android:layout_marginStart="10dp"
-                        android:id="@+id/search_txt"/>
 
                 </RelativeLayout>
 
-            </com.google.android.material.card.MaterialCardView>
 
             <!--    Progress Title Section-->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="26dp"
-                android:layout_below="@+id/search"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="20dp"
-                android:id="@+id/progress">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="26dp"-->
+<!--                android:layout_below="@+id/search"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:id="@+id/progress">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Progress"
-                    android:textSize="20sp"
-                    android:textColor="@color/white"
-                    android:id="@+id/progress_txt"/>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Progress"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:id="@+id/progress_txt"/>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:textColor="@color/purple"
-                    android:text="See All"
-                    android:id="@+id/see_all"/>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:textColor="@color/purple"-->
+<!--                    android:text="See All"-->
+<!--                    android:id="@+id/see_all"/>-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
             <!--    Progress Details Section-->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/progress_details"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/progress"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp"
-                app:strokeWidth="0dp"
-                app:cardBackgroundColor="@color/grey">
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:id="@+id/progress_details"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/search"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                app:strokeWidth="0dp"-->
+<!--                app:cardBackgroundColor="@color/grey">-->
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Daily Task"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="10dp"
-                        android:id="@+id/daily_task_txt"/>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Daily Task"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:layout_marginStart="20dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:id="@+id/daily_task_txt"/>-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2/3 Task Completed"
-                        android:textColor="@color/white"
-                        android:textSize="15sp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_below="@+id/daily_task_txt"
-                        android:id="@+id/daily_task_completed"/>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="2/3 Task Completed"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="15sp"-->
+<!--                        android:layout_marginStart="20dp"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:layout_below="@+id/daily_task_txt"-->
+<!--                        android:id="@+id/daily_task_completed"/>-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="You are almost done for the day"
-                        android:textColor="@color/purple"
-                        android:textSize="12sp"
-                        android:layout_below="@+id/daily_task_completed"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="4dp"
-                        android:id="@+id/daily_progress_txt"/>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="You are almost done for the day"-->
+<!--                        android:textColor="@color/purple"-->
+<!--                        android:textSize="12sp"-->
+<!--                        android:layout_below="@+id/daily_task_completed"-->
+<!--                        android:layout_marginStart="20dp"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:id="@+id/daily_progress_txt"/>-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="56%"
-                        android:textColor="@color/white"
-                        android:layout_alignParentEnd="true"
-                        android:layout_below="@+id/daily_task_completed"
-                        android:layout_marginEnd="10dp"
-                        android:id="@+id/progress_percentage"/>
-
-
-                    <ProgressBar
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/progress_percentage"
-                        android:layout_marginTop="5dp"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                        android:progress="56"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:progressBackgroundTint="@color/purple"
-                        android:progressTint="@color/purple"
-                        android:layout_marginBottom="25dp"
-                        android:id="@+id/progress_bar"/>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="56%"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:layout_alignParentEnd="true"-->
+<!--                        android:layout_below="@+id/daily_task_completed"-->
+<!--                        android:layout_marginEnd="10dp"-->
+<!--                        android:id="@+id/progress_percentage"/>-->
 
 
-                </RelativeLayout>
+<!--                    <ProgressBar-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_below="@id/progress_percentage"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
+<!--                        android:progress="56"-->
+<!--                        android:layout_marginStart="20dp"-->
+<!--                        android:layout_marginEnd="20dp"-->
+<!--                        android:progressBackgroundTint="@color/purple"-->
+<!--                        android:progressTint="@color/purple"-->
+<!--                        android:layout_marginBottom="25dp"-->
+<!--                        android:id="@+id/progress_bar"/>-->
 
-            </com.google.android.material.card.MaterialCardView>
+
+<!--                </RelativeLayout>-->
+
+<!--            </com.google.android.material.card.MaterialCardView>-->
 
             <!--    Today's Task Title Section-->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="26dp"
-                android:layout_below="@+id/progress_details"
+                android:layout_below="@+id/search_card"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"

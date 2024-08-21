@@ -43,6 +43,7 @@ public class SignUp extends AppCompatActivity {
     private EditText confirm_password;
     private MaterialButton createBtn;
     private CountryCodePicker countryCodePicker;
+    private TextView loginTxt;
     String countryCode;
     String tel;
     private ProgressDialog progressDialog;
@@ -60,6 +61,10 @@ public class SignUp extends AppCompatActivity {
 
         initViews();
         //verify();
+        loginTxt.setOnClickListener(v -> {
+            startActivity(new Intent(SignUp.this, VerifyOTP.class));
+            finish();
+        });
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -179,9 +184,18 @@ public class SignUp extends AppCompatActivity {
         password = findViewById(R.id.password);
         confirm_password = findViewById(R.id.confirm_password);
         createBtn = findViewById(R.id.create_account_btn);
+        loginTxt = findViewById(R.id.login_txt);
 
     }
 
-
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (firebaseAuth.getCurrentUser() != null){
+            Intent intent = new Intent(SignUp.this, Home.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+        }
+    }
 }

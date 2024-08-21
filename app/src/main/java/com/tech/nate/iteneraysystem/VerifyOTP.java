@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class VerifyOTP extends AppCompatActivity {
 
 
+    private TextView signup;
     private EditText email;
     private EditText password;
     private MaterialButton login_btn;
@@ -32,6 +34,11 @@ public class VerifyOTP extends AppCompatActivity {
 
         login_btn.setOnClickListener(v -> {
             checkFields();
+        });
+
+        signup.setOnClickListener(v -> {
+            startActivity(new Intent(VerifyOTP.this, SignUp.class));
+            finish();
         });
 
     }
@@ -63,6 +70,7 @@ public class VerifyOTP extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         firebaseAuth = FirebaseAuth.getInstance();
+        signup = findViewById(R.id.signup_txt);
     }
 
 }

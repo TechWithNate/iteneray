@@ -27,6 +27,7 @@
         android:id="@+id/email"
         android:textColor="@color/white"
         android:hint="Email"
+        android:inputType="textEmailAddress"
         android:textColorHint="#959494"/>
 
     <EditText
@@ -37,6 +38,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:id="@+id/password"
+        android:inputType="textPassword"
         android:textColor="@color/white"
         android:hint="Password"
         android:textColorHint="#959494"/>
@@ -53,6 +55,16 @@
         app:backgroundTint="@color/purple"
         android:id="@+id/login_btn"/>
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#3F51B5"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/signup_txt"
+        android:text="Don't have an account? SignUp"/>
 
 
 </RelativeLayout>

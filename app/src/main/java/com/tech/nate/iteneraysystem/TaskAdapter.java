@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,17 +24,20 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
+public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> implements Filterable {
 
     private Context context;
     private ArrayList<Model> tasks;
+    private ArrayList<Model> taskModelsFull;
     private TaskClickedInterface taskClickedInterface;
 
     public TaskAdapter(Context context, ArrayList<Model> tasks, TaskClickedInterface taskClickedInterface) {
         this.context = context;
         this.tasks = tasks;
+        this.taskModelsFull = new ArrayList<>(tasks);
         this.taskClickedInterface = taskClickedInterface;
     }
 
@@ -65,6 +70,36 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
             taskClickedInterface.onTaskClicked(position);
         });
 
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                List<Model> filteredList = new ArrayList<>();
+                if (constraint == null || constraint.length() == 0) {
+                    filteredList.addAll(taskModelsFull);
+                } else {
+                    String filterPattern = constraint.toString().toLowerCase().trim();
+                    for (Model item : taskModelsFull) {
+                        if (item.getTaskName().toLowerCase().contains(filterPattern)) {
+                            filteredList.add(item);
+                        }
+                    }
+                }
+                FilterResults results = new FilterResults();
+                results.values = filteredList;
+                return results;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                tasks.clear();
+                tasks.addAll((List) results.values);
+                notifyDataSetChanged();
+            }
+        };
     }
 
     @Override
