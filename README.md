@@ -14,7 +14,7 @@ Create a folder and clone the project using opening cmd into that folder and pas
 ```bash
 git clone https://github.com/TechWithNate/iteneray.git
 ```
-NB: make sure git is intalled on your machine.
+NB: make sure git is installed on your machine.
 Once you clone the project, open android studio and click open from folder and select where project is cloned.
 
 Allow all dependencies and ready to run.
@@ -22,7 +22,7 @@ Allow all dependencies and ready to run.
 Run project
 
 ## Splash Screen 
-Splash screen dusplays in 2.5 seconds with ATU logo
+Splash screen du[iteneraysystem](app%2Fsrc%2FandroidTest%2Fjava%2Fcom%2Ftech%2Fnate%2Fiteneraysystem)splays in 2.5 seconds with ATU logo
 ## Create Account with OTP
 OTP authentication with firebase
 

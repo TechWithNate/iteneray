@@ -14,7 +14,7 @@
         android:layout_marginTop="50dp"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:text="Verify Phone Number"
+        android:text="Create Account"
         android:id="@+id/verify_txt"/>
 
     <EditText
@@ -24,36 +24,63 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_toEndOf="@+id/ccp"
-        android:id="@+id/phone_number"
+        android:id="@+id/email"
         android:textColor="@color/white"
-        android:hint="054 665 1113"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
         android:textColorHint="#959494"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/password"
+        android:textColor="@color/white"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:textColorHint="#959494"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:inputType="textPassword"
+        android:id="@+id/confirm_password"
+        android:textColor="@color/white"
+        android:hint="Confirm Password"
+        android:textColorHint="#959494"/>
+
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/phone_number"
+        android:layout_below="@+id/confirm_password"
         android:layout_marginTop="30dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         app:cornerRadius="5dp"
-        android:text="@string/send_code"
+        android:text="Create Account"
         app:backgroundTint="@color/purple"
-        android:id="@+id/send_btn"/>
+        android:id="@+id/create_account_btn"/>
 
-    <com.hbb20.CountryCodePicker
-        android:id="@+id/ccp"
-        android:layout_marginTop="10dp"
-        android:layout_width="70dp"
-        android:layout_height="48dp"
-        app:ccp_autoDetectCountry="true"
-        android:layout_below="@+id/verify_txt"
-        app:ccp_showFlag="true"
-        app:ccp_showNameCode="true"
-        app:ccp_showFullName="true"
-        app:ccpDialog_backgroundColor="@color/purple"
-        android:layout_marginStart="20dp"/>
+<!--    <com.hbb20.CountryCodePicker-->
+<!--        android:id="@+id/ccp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_width="70dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        app:ccp_autoDetectCountry="true"-->
+<!--        android:layout_below="@+id/verify_txt"-->
+<!--        app:ccp_showFlag="true"-->
+<!--        app:ccp_showNameCode="true"-->
+<!--        app:ccp_showFullName="true"-->
+<!--        app:ccpDialog_backgroundColor="@color/purple"-->
+<!--        android:layout_marginStart="20dp"/>-->
 
 
 </RelativeLayout>
