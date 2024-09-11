@@ -44,6 +44,7 @@ public class Home extends AppCompatActivity implements TaskAdapter.TaskClickedIn
     private ProgressBar progressBar;
     private RecyclerView todayRecycler;
     private FloatingActionButton addFab;
+    private TextView dailyTask;
 
     private ArrayList<Model> tasks;
     private TaskAdapter taskAdapter;
@@ -66,6 +67,7 @@ public class Home extends AppCompatActivity implements TaskAdapter.TaskClickedIn
 
 
         fetchTasksFromFirebase();
+        dailyTask.setText("This are you tasks today");
 
 
 
@@ -108,6 +110,7 @@ public class Home extends AppCompatActivity implements TaskAdapter.TaskClickedIn
         addFab = findViewById(R.id.add_fab);
         layoutManager = new LinearLayoutManager(this);
         databaseReference = FirebaseDatabase.getInstance().getReference();
+        dailyTask = findViewById(R.id.daily_task);
     }
 
 
